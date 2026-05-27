@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murat — Craftsman & Maker | GTA</title>
+<meta name="description" content="Custom woodwork, handcrafted lamps, drawers and home repairs. Based in the GTA. Contact Murat for pricing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#141414;
+  --surface:#191919;
+  --card:#1F1F1F;
+  --accent:#D4C4A0;
+  --accent-light:#E0D4B8;
+  --cream:#F0EAD8;
+  --muted:#7A7060;
+  --border:rgba(212,196,160,0.12);
+  --r:10px;
+  --serif:'Times New Roman',Times,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden;font-weight:300}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,20,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase}
+.nav-cta{background:var(--accent);color:#111;padding:9px 22px;border-radius:var(--r);font-size:0.8rem;font-weight:500;letter-spacing:0.07em;text-decoration:none;text-transform:uppercase;transition:all .2s}
+.nav-cta:hover{background:var(--accent-light);transform:translateY(-1px)}
+@media(max-width:500px){nav{padding:14px 18px}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px 24px 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 45%,rgba(212,196,160,0.07) 0%,transparent 70%);pointer-events:none}
+.grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");opacity:.5;pointer-events:none}
+.hero-eyebrow{font-size:0.7rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;font-weight:500}
+.hero-title{font-family:var(--serif);font-size:clamp(5.5rem,22vw,14rem);font-weight:700;line-height:0.88;color:var(--accent);letter-spacing:0.04em;margin-bottom:28px;position:relative;z-index:1}
+.hero-sub{font-size:clamp(0.9rem,2vw,1.05rem);color:var(--muted);max-width:420px;line-height:1.85;margin-bottom:42px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn-p{background:var(--accent);color:#111;padding:15px 34px;border-radius:var(--r);font-size:0.85rem;font-weight:500;letter-spacing:0.07em;text-decoration:none;text-transform:uppercase;transition:all .2s;display:inline-block}
+.btn-p:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 10px 28px rgba(212,196,160,0.18)}
+.btn-s{border:1px solid rgba(212,196,160,0.28);color:var(--cream);padding:15px 34px;border-radius:var(--r);font-size:0.85rem;font-weight:300;letter-spacing:0.07em;text-decoration:none;text-transform:uppercase;transition:all .2s;display:inline-block}
+.btn-s:hover{border-color:var(--accent);color:var(--accent)}
+.scroll-arrow{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:var(--accent);opacity:.35;animation:arrowBounce 2s ease-in-out infinite}
+@keyframes arrowBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* DIVIDER */
+.div{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(212,196,160,0.15),transparent)}
+
+/* SECTION SHELL */
+.sec{padding:80px 24px;max-width:1060px;margin:0 auto}
+.label{font-size:0.68rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:500}
+.stitle{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:16px}
+.stitle em{color:var(--accent);font-style:italic}
+.sbody{color:var(--muted);font-size:.95rem;line-height:1.8;max-width:580px}
+
+/* SERVICES */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:48px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:32px 26px;transition:transform .22s,border-color .22s,box-shadow .22s;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--accent),var(--accent-light));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.card:hover{transform:translateY(-5px);border-color:rgba(212,196,160,0.25);box-shadow:0 20px 48px rgba(0,0,0,.6)}
+.card:hover::after{transform:scaleX(1)}
+.card-icon{font-size:2rem;margin-bottom:16px;display:block}
+.card h3{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--cream);margin-bottom:10px}
+.card p{font-size:.88rem;color:var(--muted);line-height:1.65}
+
+/* FAIR BANNER */
+.fair-wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.fair{background:#1A1A1A;border:1px solid rgba(212,196,160,0.18);border-radius:16px;padding:52px 40px;text-align:center;position:relative;overflow:hidden}
+.fair::before{content:'✦';position:absolute;top:-10px;right:-10px;font-size:160px;color:rgba(212,196,160,0.03);pointer-events:none;line-height:1}
+.fair-chip{display:inline-block;background:var(--accent);color:#111;padding:6px 20px;border-radius:40px;font-size:0.74rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:22px}
+.fair h2{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;color:var(--cream);margin-bottom:14px;line-height:1.2}
+.fair p{color:var(--muted);font-size:.9rem;line-height:1.8;max-width:500px;margin:0 auto 24px}
+.fair-note{display:inline-flex;align-items:center;gap:8px;background:rgba(212,196,160,0.07);border:1px solid rgba(212,196,160,0.18);padding:10px 22px;border-radius:40px;font-size:.8rem;color:var(--accent);letter-spacing:0.04em}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:40px}
+@media(max-width:680px){.about-grid{grid-template-columns:1fr;gap:36px}}
+.photo-ph{aspect-ratio:4/5;background:var(--card);border-radius:13px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;overflow:hidden}
+.photo-ph img{width:100%;height:100%;object-fit:cover;border-radius:13px;display:none}
+.photo-ph-icon{font-size:2.8rem;opacity:.2}
+.photo-ph span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);opacity:.5}
+.about-text h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,2.8rem);font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:20px}
+.about-text h2 em{color:var(--accent);font-style:italic}
+.about-text p{color:var(--muted);font-size:.9rem;line-height:1.85;margin-bottom:16px}
+.stats{display:flex;gap:36px;margin-top:34px;flex-wrap:wrap}
+.stat-n{font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:4px}
+.stat-l{font-size:.68rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+
+/* CONTACT */
+.cbox{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:58px 48px;text-align:center;margin-top:40px}
+@media(max-width:600px){.cbox{padding:40px 22px}}
+.cbox h2{font-family:var(--serif);font-size:clamp(1.9rem,5vw,3rem);font-weight:700;color:var(--cream);margin-bottom:16px;line-height:1.15}
+.cbox h2 em{color:var(--accent);font-style:italic}
+.cbox p{color:var(--muted);font-size:.9rem;max-width:460px;margin:0 auto 34px;line-height:1.8}
+.cmethods{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cbtn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:var(--r);font-size:.88rem;font-weight:500;letter-spacing:.04em;text-decoration:none;transition:all .2s}
+.cbtn.wa{background:#25D366;color:#000}
+.cbtn.wa:hover{background:#20C15B;transform:translateY(-2px);box-shadow:0 10px 26px rgba(37,211,102,.2)}
+.cbtn.em{border:1px solid rgba(212,196,160,.28);color:var(--cream)}
+.cbtn.em:hover{border-color:var(--accent);color:var(--accent)}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(212,196,160,.08);padding:30px 24px;text-align:center;color:rgba(122,112,96,.4);font-size:.76rem;letter-spacing:.07em}
+footer span{color:var(--accent)}
+
+/* FADE-UP */
+.fu{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.fu.vis{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Murat</div>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<div class="hero">
+  <div class="grain"></div>
+  <p class="hero-eyebrow">Craftsman &nbsp;·&nbsp; Maker &nbsp;·&nbsp; Problem Solver</p>
+  <h1 class="hero-title">MURAT</h1>
+  <p class="hero-sub">Custom woodwork, handcrafted lamps & home solutions — built with care, right here in the GTA.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-p">Contact for Pricing</a>
+    <a href="#services" class="btn-s">See What I Do</a>
+  </div>
+  <div class="scroll-arrow">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- SERVICES -->
+<div class="sec" id="services">
+  <p class="label fu">What I Do</p>
+  <h2 class="stitle fu">Every job, done <em>right.</em></h2>
+  <p class="sbody fu">From a single custom lamp to a full room fix — if it involves wood, tools, or skill, it's within reach. No job too small.</p>
+  <div class="grid">
+    <div class="card fu">
+      <span class="card-icon">🪔</span>
+      <h3>Custom Lamps</h3>
+      <p>Handcrafted wooden lamps built to your style and space. Each piece is one of a kind.</p>
+    </div>
+    <div class="card fu">
+      <span class="card-icon">🪵</span>
+      <h3>Woodwork & Furniture</h3>
+      <p>Tables, shelves, frames and more. Solid craftsmanship, built to outlast anything flat-packed.</p>
+    </div>
+    <div class="card fu">
+      <span class="card-icon">🗄️</span>
+      <h3>Drawers & Storage</h3>
+      <p>Custom drawers, cabinets and storage solutions tailored exactly to your space.</p>
+    </div>
+    <div class="card fu">
+      <span class="card-icon">🔧</span>
+      <h3>Handyman & Repairs</h3>
+      <p>Doors, fixtures, installations, repairs — if something needs fixing at home, consider it handled.</p>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- SCHOOL FAIR -->
+<div class="fair-wrap">
+  <div class="fair fu">
+    <div class="fair-chip">📅 June 4, 2025</div>
+    <h2>Find Me at the School Spring Fair!</h2>
+    <p>Stop by my stand, see the work in person, grab a card and scan this QR code. All proceeds from fair day sales go directly back to the school — because that's the kind of start worth making.</p>
+    <div class="fair-note">💛&nbsp; 100% of fair day proceeds support the school</div>
+  </div>
+</div>
+
+<div class="div" style="margin-top:80px"></div>
+
+<!-- ABOUT -->
+<div class="sec" id="about">
+  <div class="about-grid">
+    <div class="photo-ph fu" id="photo-container">
+      <img id="murat-photo" src="" alt="Murat — Craftsman">
+      <div class="photo-ph-icon" id="photo-placeholder-icon">📷</div>
+      <span id="photo-placeholder-text">Photo coming soon</span>
+    </div>
+    <div class="about-text">
+      <p class="label">About</p>
+      <h2 class="fu">Made by hand.<br><em>Meant to last.</em></h2>
+      <p class="fu">I'm Murat — a craftsman based in the GTA who believes that if something's worth making, it's worth making properly. I work from my workshop at home, building things with my hands the way they were meant to be built.</p>
+      <p class="fu">Whether it's a lamp for your living room, custom storage, or something that just needs fixing — I'm your person. No corporate markup. No middleman. Just honest work at a fair price.</p>
+      <div class="stats fu">
+        <div><div class="stat-n">100%</div><div class="stat-l">Handmade</div></div>
+        <div><div class="stat-n">GTA</div><div class="stat-l">Based</div></div>
+        <div><div class="stat-n">1:1</div><div class="stat-l">Custom Work</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- CONTACT -->
+<div class="sec" id="contact">
+  <div class="cbox fu">
+    <p class="label">Get in Touch</p>
+    <h2>Every piece is <em>custom.</em><br>Let's talk.</h2>
+    <p>Pricing depends on the job. Send me a message, tell me what you need, and we'll figure it out from there. No commitment, just a conversation.</p>
+    <div class="cmethods">
+      <a href="https://wa.me/16475312304" class="cbtn wa">
+        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="mailto:muratsalihkupcu.ca@gmail.com" class="cbtn em">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Send Email
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 <span>Murat</span> &nbsp;·&nbsp; Handcrafted in the GTA &nbsp;·&nbsp; All rights reserved</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i % 5 * 75);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
